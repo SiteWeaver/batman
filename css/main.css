@@ -1,0 +1,1349 @@
+/* ===== ИМПОРТ ШРИФТОВ ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+
+/* ===== ПЕРЕМЕННЫЕ ===== */
+:root {
+    /* Цветовая палитра Бэтмена */
+    --batman-black: #000000;
+    --batman-dark: #111111;
+    --batman-gray: #222222;
+    --batman-yellow: #FFD700;
+    --batman-orange: #FFA500;
+    --batman-red: #8B0000;
+    --text-white: #FFFFFF;
+    --text-gray: #CCCCCC;
+    --text-light: #F0F0F0;
+    
+    /* Тени и эффекты */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.7);
+    --glow-yellow: 0 0 15px rgba(255, 215, 0, 0.7);
+    --glow-orange: 0 0 20px rgba(255, 165, 0, 0.5);
+    
+    /* Шрифты */
+    --font-main: 'Montserrat', sans-serif;
+    --font-heading: 'Oswald', sans-serif;
+    
+    /* Отступы */
+    --space-xs: 10px;
+    --space-sm: 20px;
+    --space-md: 40px;
+    --space-lg: 80px;
+    --space-xl: 120px;
+}
+
+/* ===== СБРОС СТИЛЕЙ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--batman-black);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(40, 40, 40, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(40, 40, 40, 0.1) 0%, transparent 20%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: var(--space-sm) 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(var(--glow-yellow));
+    transition: all 0.5s ease;
+    animation: logoPulse 3s infinite ease-in-out;
+}
+a {
+    text-decoration: none !important;
+}
+.logo:hover .logo-img {
+    transform: rotate(360deg) scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9));
+}
+
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Навигация */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--space-sm);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--text-gray);
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--batman-yellow);
+    border-color: var(--batman-yellow);
+    transform: translateY(-3px);
+    box-shadow: var(--glow-yellow);
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+}
+
+/* Мобильное меню */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--batman-yellow);
+}
+
+/* ===== HERO СЕКЦИЯ ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    line-height: 1.1;
+}
+
+.title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.title-line:nth-child(1) { animation-delay: 0.2s; }
+.title-line:nth-child(2) { animation-delay: 0.4s; }
+.title-line.accent {
+    color: var(--batman-yellow);
+    animation-delay: 0.6s;
+    text-shadow: var(--glow-yellow);
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-lg);
+    color: var(--text-light);
+    opacity: 0;
+    animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 35px;
+    background: linear-gradient(45deg, var(--batman-yellow), var(--batman-orange));
+    color: var(--batman-black);
+    border: none;
+    border-radius: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+.hero-button.secondary {
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--batman-yellow);
+}
+
+.hero-button.secondary:hover {
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.batman-head {
+    width: 100%;
+    max-width: 500px;
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--batman-yellow);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+/* ===== ОСНОВНЫЕ СЕКЦИИ ===== */
+.section {
+    padding: var(--space-xl) 0;
+    position: relative;
+}
+
+.dark-section {
+    background: linear-gradient(180deg, var(--batman-dark), var(--batman-black));
+}
+
+.light-section {
+    background: linear-gradient(180deg, var(--batman-gray), var(--batman-dark));
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    color: var(--batman-yellow);
+    position: relative;
+    padding-bottom: var(--space-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--batman-yellow), transparent);
+}
+
+.section-title i {
+    margin-right: 15px;
+}
+
+/* ===== BATCAVE СЕКЦИЯ ===== */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: var(--space-md);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--batman-yellow);
+    box-shadow: var(--glow-yellow);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--batman-yellow);
+}
+
+/* Карта пещеры */
+.cave-map {
+    position: relative;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin-top: var(--space-lg);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.map-area {
+    position: absolute;
+    cursor: pointer;
+}
+
+.map-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--batman-yellow);
+    border-radius: 50%;
+    box-shadow: var(--glow-yellow);
+}
+
+.map-label {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.map-area:hover .map-label {
+    opacity: 1;
+}
+
+/* ===== ORIGIN СЕКЦИЯ ===== */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto var(--space-lg);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--batman-yellow), transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 45%;
+    margin-bottom: var(--space-lg);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+
+.timeline-item.right {
+    left: 55%;
+    padding-left: 60px;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-md);
+    border-radius: 10px;
+    border-left: 3px solid var(--batman-yellow);
+}
+
+.timeline-item.right .timeline-content {
+    border-left: none;
+    border-right: 3px solid var(--batman-yellow);
+}
+
+.timeline-content h3 {
+    color: var(--batman-yellow);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-sm);
+}
+
+/* Комикс панели */
+.comic-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.comic-panel {
+    background: #fff;
+    border: 5px solid #000;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.panel-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.panel-text {
+    padding: var(--space-md);
+    background: #ffeb3b;
+    color: #000;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-top: 3px solid #000;
+}
+
+/* ===== ALLIES & ENEMIES СЕКЦИЯ ===== */
+.character-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.tab-button {
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--text-gray);
+    border: 2px solid var(--batman-yellow);
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: var(--batman-yellow);
+    color: var(--batman-black);
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    display: none;
+}
+
+.character-grid.active {
+    display: grid;
+}
+
+.character-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--batman-yellow);
+}
+
+.character-card.enemy:hover {
+    border-color: var(--batman-red);
+}
+
+.character-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.character-info {
+    padding: var(--space-md);
+}
+
+.character-info h3 {
+    color: var(--batman-yellow);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.character-role {
+    color: var(--text-gray);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+}
+
+.character-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.character-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+/* Карта Готэма */
+.gotham-map {
+    margin-top: var(--space-lg);
+    text-align: center;
+}
+
+.map-container {
+    position: relative;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: var(--space-md);
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.map-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--batman-yellow);
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--glow-yellow);
+}
+
+.map-point::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--batman-yellow);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.point-tooltip {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 5px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.map-point:hover .point-tooltip {
+    opacity: 1;
+}
+
+/* ===== ABILITIES СЕКЦИЯ ===== */
+.skills-chart {
+    max-width: 800px;
+    margin: 0 auto var(--space-lg);
+}
+
+.skill {
+    margin-bottom: var(--space-md);
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.skill-bar {
+    height: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--batman-yellow), var(--batman-orange));
+    border-radius: 10px;
+    position: relative;
+    width: 0;
+    animation: fillBar 1.5s ease forwards;
+}
+
+@keyframes fillBar {
+    to { width: attr(data-percent); }
+}
+
+.abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.ability-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-md);
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.ability-card:hover {
+    border-color: var(--batman-yellow);
+    transform: translateY(-10px);
+}
+
+.ability-icon {
+    font-size: 3rem;
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.ability-card h3 {
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+/* Тест */
+.quiz-section {
+    background: rgba(255, 215, 0, 0.05);
+    padding: var(--space-lg);
+    border-radius: 20px;
+    margin-top: var(--space-lg);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.quiz-section h3 {
+    text-align: center;
+    margin-bottom: var(--space-md);
+    color: var(--batman-yellow);
+}
+
+.quiz-question {
+    margin-bottom: var(--space-md);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.quiz-option {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: var(--text-white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.quiz-option:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateX(10px);
+}
+
+.result-meter {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: var(--space-md) 0;
+}
+
+.result-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--batman-yellow), var(--batman-orange));
+    border-radius: 10px;
+    width: 0;
+    transition: width 1s ease;
+}
+
+.result-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--batman-yellow);
+}
+
+/* ===== EQUIPMENT СЕКЦИЯ ===== */
+.costume-gallery {
+    margin-bottom: var(--space-xl);
+}
+
+.costume-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    position: relative;
+}
+
+.costume-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 215, 0, 0.3);
+    z-index: 1;
+}
+
+.costume-era {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.costume-era.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.era-image {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 auto var(--space-sm);
+    border: 3px solid transparent;
+}
+
+.costume-era.active .era-image {
+    border-color: var(--batman-yellow);
+    box-shadow: var(--glow-yellow);
+}
+
+.costume-era h4 {
+    color: var(--batman-yellow);
+    margin-bottom: 5px;
+}
+
+.costume-display {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-lg);
+    border-radius: 20px;
+}
+
+.display-image {
+    flex: 1;
+    height: 400px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.display-info {
+    flex: 1;
+}
+
+.display-info h3 {
+    font-size: 2.5rem;
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.costume-features {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.costume-features span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+/* Интерактивный пояс */
+.utility-belt {
+    background: rgba(0, 0, 0, 0.5);
+    padding: var(--space-lg);
+    border-radius: 20px;
+    margin-bottom: var(--space-xl);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.belt-items {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+    flex-wrap: wrap;
+}
+
+.belt-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--space-sm);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.belt-item:hover,
+.belt-item.active {
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.item-icon {
+    font-size: 2.5rem;
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.belt-item span {
+    font-weight: 600;
+}
+
+.tool-info {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.tool-image {
+    flex: 1;
+    text-align: center;
+    color: var(--batman-yellow);
+}
+
+.tool-description {
+    flex: 2;
+}
+
+.tool-description h4 {
+    font-size: 2rem;
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.tool-stats {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.tool-stats span {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Галерея транспортных средств */
+.vehicle-showcase {
+    margin-top: var(--space-xl);
+}
+
+.vehicles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+}
+
+.vehicle-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--batman-yellow);
+}
+
+.vehicle-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.vehicle-info {
+    padding: var(--space-md);
+}
+
+.vehicle-info h4 {
+    font-size: 1.5rem;
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.vehicle-specs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vehicle-specs span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--batman-black);
+    padding: var(--space-xl) 0;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(var(--glow-yellow));
+}
+
+.footer-logo span {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--batman-yellow);
+}
+
+.footer-quote blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    max-width: 500px;
+}
+
+.footer-quote cite {
+    display: block;
+    margin-top: var(--space-sm);
+    color: var(--batman-yellow);
+}
+
+.footer-social h4 {
+    color: var(--batman-yellow);
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 50%;
+    color: var(--text-white);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--batman-yellow);
+    color: var(--batman-black);
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    margin-top: var(--space-sm);
+    color: var(--text-gray);
+}
+
+/* ===== КНОПКА НАВЕРХ ===== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 215, 0, 0.9);
+    color: var(--batman-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--batman-yellow);
+    transform: scale(1.1);
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .batman-head {
+        max-width: 400px;
+    }
+    
+    .nav-list {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-md);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-list.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 70px !important;
+        text-align: left !important;
+    }
+    
+    .timeline-item.right .timeline-content {
+        border-left: 3px solid var(--batman-yellow);
+        border-right: none;
+    }
+    
+    .costume-display {
+        flex-direction: column;
+    }
+    
+    .tool-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .abilities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vehicles {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text {
+        font-size: 1.1rem;
+    }
+    
+    .section {
+        padding: var(--space-lg) 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .costume-timeline {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .costume-timeline::before {
+        display: none;
+    }
+    
+    .belt-items {
+        gap: var(--space-sm);
+    }
+    
+    .belt-item {
+        min-width: 80px;
+    }
+}
+/* Убрать все свечения */
+.batman-head,
+.batman-head-corner,
+.hero-image img {
+    filter: none;
+    box-shadow: none;
+    text-shadow: none;
+    -webkit-filter: none;
+}
+
+/* Сделать логотип больше */
+.logo-img {
+    width: 200px !important;
+    height: 60px !important;
+    min-width: 90px;
+    min-height: 40px;
+}
+
+.logo-img-container {
+    width: 100px !important;
+    height: 100px !important;
+}

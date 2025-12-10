@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATMAN - The Dark Knight</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header с навигацией -->
+    <header>
+        <div class="container">
+            <!-- Логотип -->
+            <div class="logo">
+                <div class="logo-img-container">
+                    <img src="img/batman-logo.png" alt="Batman Logo" class="logo-img">
+                </div>
+            </div>
+            
+            <!-- Навигация -->
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#batcave" class="nav-link"><i class="fas fa-cave"></i> Batcave</a></li>
+                    <li><a href="#origin" class="nav-link"><i class="fas fa-history"></i> Origin Story</a></li>
+                    <li><a href="#allies" class="nav-link"><i class="fas fa-users"></i> Allies & Enemies</a></li>
+                    <li><a href="#abilities" class="nav-link"><i class="fas fa-bolt"></i> Abilities</a></li>
+                    <li><a href="#equipment" class="nav-link"><i class="fas fa-tools"></i> Gear & Tech</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Мобильное меню -->
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">I AM VENGEANCE</span>
+                    <span class="title-line">I AM THE NIGHT</span>
+                    <span class="title-line accent">I AM BATMAN</span>
+                </h1>
+                <p class="hero-text">
+                    The Dark Knight of Gotham City. A symbol of justice who uses intellect, technology, 
+                    and unwavering will to fight crime without superpowers.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#batcave" class="hero-button"><i class="fas fa-arrow-down"></i> Explore the Legend</a>
+                    <a href="#origin" class="hero-button secondary"><i class="fas fa-play"></i> Watch Origin</a>
+                </div>
+            </div>
+            
+            <!-- Изображение Бэтмена -->
+            <div class="hero-image">
+                <img src="img/BATMAN.png" alt="Batman" class="batman-head">
+            </div>
+        </div>
+        
+        <!-- Стрелка вниз -->
+        <a href="#batcave" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Раздел 1: Batcave -->
+        <section id="batcave" class="section dark-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-cave"></i> THE BATCAVE
+                </h2>
+                <div class="section-content">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>Batcomputer</h3>
+                            <p>The world's most advanced supercomputer, capable of analyzing any data, tracking criminals, and monitoring all of Gotham.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h3>Vehicle Bay</h3>
+                            <p>Home to the Batmobile, Batwing, Batcycle, and various other vehicles designed for urban combat and pursuit.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h3>Training Area</h3>
+                            <p>Complete gymnasium, combat dojo, and obstacle course for maintaining peak physical and mental condition.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-archive"></i>
+                            </div>
+                            <h3>Evidence Archive</h3>
+                            <p>Forensic laboratory and evidence storage containing case files on every major criminal in Gotham's history.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 3D план пещеры -->
+                    <div class="cave-map">
+                        <div class="map-area armory active" data-area="armory">
+                            <div class="map-dot"></div>
+                            <div class="map-label">Armory</div>
+                        </div>
+                        <div class="map-area computer" data-area="computer">
+                            <div class="map-dot"></div>
+                            <div class="map-label">Batcomputer</div>
+                        </div>
+                        <div class="map-area garage" data-area="garage">
+                            <div class="map-dot"></div>
+                            <div class="map-label">Vehicle Bay</div>
+                        </div>
+                        <div class="map-area lab" data-area="lab">
+                            <div class="map-dot"></div>
+                            <div class="map-label">Forensic Lab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел 2: Origin Story -->
+        <section id="origin" class="section light-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-history"></i> ORIGIN STORY
+                </h2>
+                
+                <!-- Таймлайн -->
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>1975</h3>
+                            <h4>Birth of Bruce Wayne</h4>
+                            <p>Born to Dr. Thomas Wayne and Martha Wayne, heirs to the Wayne family fortune.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>1981</h3>
+                            <h4>Murder in Crime Alley</h4>
+                            <p>Witnesses the murder of his parents by mugger Joe Chill, a trauma that defines his life.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>1981-1995</h3>
+                            <h4>Years of Preparation</h4>
+                            <p>Travels the world training in criminology, forensics, martial arts, and escape artistry.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>1995</h3>
+                            <h4>Return to Gotham</h4>
+                            <p>Returns to Gotham City and establishes the Batman persona to fight crime.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>1996</h3>
+                            <h4>First Appearance</h4>
+                            <p>Makes his first public appearance, terrifying Gotham's criminal underworld.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Present Day</h3>
+                            <h4>The Dark Knight</h4>
+                            <p>Protector of Gotham, member of the Justice League, and symbol of hope.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Комикс панели -->
+                <div class="comic-panels">
+                    <div class="comic-panel">
+                        <div class="panel-image" style="background-image: url('images/origin1.jpg');"></div>
+                        <div class="panel-text">"I swear by the spirits of my parents to avenge their deaths by spending the rest of my life warring on all criminals."</div>
+                    </div>
+                    <div class="comic-panel">
+                        <div class="panel-image" style="background-image: url('images/origin2.jpg');"></div>
+                        <div class="panel-text">"Criminals are a superstitious cowardly lot. So my disguise must be able to strike terror into their hearts."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел 3: Allies & Enemies -->
+        <section id="allies" class="section dark-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i> ALLIES & ENEMIES
+                </h2>
+                
+                <div class="character-tabs">
+                    <button class="tab-button active" data-tab="allies">Allies</button>
+                    <button class="tab-button" data-tab="enemies">Enemies</button>
+                </div>
+                
+                <!-- Союзники -->
+                <div class="character-grid active" id="allies-tab">
+                    <div class="character-card">
+                        <div class="character-img" style="background-image: url('images/alfred.jpg');"></div>
+                        <div class="character-info">
+                            <h3>Alfred Pennyworth</h3>
+                            <p class="character-role">Butler & Confidant</p>
+                            <p>Former SAS operative who serves as Bruce Wayne's butler, moral compass, and surrogate father.</p>
+                            <div class="character-stats">
+                                <span><i class="fas fa-shield-alt"></i> Loyalty: 100%</span>
+                                <span><i class="fas fa-brain"></i> Intelligence: 95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <div class="character-img" style="background-image: url('images/robin.jpg');"></div>
+                        <div class="character-info">
+                            <h3>Robin/Nightwing</h3>
+                            <p class="character-role">Partner</p>
+                            <p>Dick Grayson, former circus acrobat taken in by Bruce Wayne. The first Robin, now Nightwing.</p>
+                            <div class="character-stats">
+                                <span><i class="fas fa-running"></i> Agility: 98%</span>
+                                <span><i class="fas fa-fist-raised"></i> Combat: 90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <div class="character-img" style="background-image: url('images/gordon.jpg');"></div>
+                        <div class="character-info">
+                            <h3>Commissioner Gordon</h3>
+                            <p class="character-role">Police Ally</p>
+                            <p>Honest police commissioner who works with Batman through the Bat-Signal, maintaining plausible deniability.</p>
+                            <div class="character-stats">
+                                <span><i class="fas fa-bullhorn"></i> Authority: 95%</span>
+                                <span><i class="fas fa-balance-scale"></i> Integrity: 100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Враги -->
+                <div class="character-grid" id="enemies-tab">
+                    <div class="character-card enemy">
+                        <div class="character-img" style="background-image: url('images/joker.jpg');"></div>
+                        <div class="character-info">
+                            <h3>The Joker</h3>
+                            <p class="character-role">Archenemy</p>
+                            <p>Anarchistic criminal mastermind with a twisted sense of humor, representing chaos to Batman's order.</p>
+                            <div class="character-stats">
+                                <span><i class="fas fa-brain"></i> Cunning: 99%</span>
+                                <span><i class="fas fa-skull"></i> Danger: 100%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card enemy">
+                        <div class="character-img" style="background-image: url('images/twoface.jpg');"></div>
+                        <div class="character-info">
+                            <h3>Two-Face</h3>
+                            <p class="character-role">Former Ally Turned Enemy</p>
+                            <p>Former district attorney Harvey Dent, scarred by acid and driven to make all decisions by chance.</p>
+                            <div class="character-stats">
+                                <span><i class="fas fa-dice"></i> Unpredictable: 95%</span>
+                                <span><i class="fas fa-gavel"></i> Strategic: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card enemy">
+                        <div class="character-img" style="background-image: url('images/bane.jpg');"></div>
+                        <div class="character-info">
+                            <h3>Bane</h3>
+                            <p class="character-role">Physical Threat</p>
+                            <p>Genius strategist enhanced by the drug Venom, famous for "breaking the Bat" both physically and mentally.</p>
+                            <div class="character-stats">
+                                <span><i class="fas fa-dumbbell"></i> Strength: 100%</span>
+                                <span><i class="fas fa-chess"></i> Strategy: 90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карта Готэма -->
+                <div class="gotham-map">
+                    <h3>Gotham City Crime Map</h3>
+                    <div class="map-container">
+                        <div class="map-point" style="top: 20%; left: 30%;" data-location="Arkham Asylum">
+                            <div class="point-tooltip">Arkham Asylum</div>
+                        </div>
+                        <div class="map-point" style="top: 50%; left: 60%;" data-location="Wayne Tower">
+                            <div class="point-tooltip">Wayne Tower</div>
+                        </div>
+                        <div class="map-point" style="top: 70%; left: 40%;" data-location="GCPD">
+                            <div class="point-tooltip">Gotham City PD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел 4: Abilities -->
+        <section id="abilities" class="section light-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-bolt"></i> POWERS & ABILITIES
+                </h2>
+                
+                <!-- Инфографика навыков -->
+                <div class="skills-chart">
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Combat Skills</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 98%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Detective Skills</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 99%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Intelligence</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Stealth</span>
+                            <span>97%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 97%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Technology</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Willpower</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточки способностей -->
+                <div class="abilities-grid">
+                    <div class="ability-card">
+                        <div class="ability-icon">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                        <h3>Master Martial Artist</h3>
+                        <p>Master of 127 martial arts including Karate, Judo, Krav Maga, and Ninjutsu. Can defeat multiple opponents simultaneously.</p>
+                    </div>
+                    
+                    <div class="ability-card">
+                        <div class="ability-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>World's Greatest Detective</h3>
+                        <p>Genius-level intellect with expertise in criminology, forensics, computer hacking, and disguise.</p>
+                    </div>
+                    
+                    <div class="ability-card">
+                        <div class="ability-icon">
+                            <i class="fas fa-user-ninja"></i>
+                        </div>
+                        <h3>Peak Human Condition</h3>
+                        <p>Through intense training, has reached the maximum potential of human strength, speed, stamina, and agility.</p>
+                    </div>
+                    
+                    <div class="ability-card">
+                        <div class="ability-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Technological Mastery</h3>
+                        <p>Expert in advanced technology, engineering, and gadget creation. Can bypass most security systems.</p>
+                    </div>
+                </div>
+                
+                <!-- Тест "Насколько ты Бэтмен?" -->
+                <div class="quiz-section">
+                    <h3>How Batman Are You? <i class="fas fa-question"></i></h3>
+                    <div class="quiz">
+                        <div class="quiz-question">
+                            <p>When faced with a criminal, you...</p>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-points="10">Use fear and intimidation</button>
+                                <button class="quiz-option" data-points="5">Call the police</button>
+                                <button class="quiz-option" data-points="0">Run away</button>
+                            </div>
+                        </div>
+                        <div class="quiz-result">
+                            <div class="result-meter">
+                                <div class="result-fill" style="width: 0%;"></div>
+                            </div>
+                            <p class="result-text">Take the quiz to see your result!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел 5: Equipment -->
+        <section id="equipment" class="section dark-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-tools"></i> COSTUME & EQUIPMENT
+                </h2>
+                
+                <!-- Галерея костюмов -->
+                <div class="costume-gallery">
+                    <div class="costume-timeline">
+                        <div class="costume-era active" data-era="1939">
+                            <div class="era-image" style="background-image: url('images/costume1.jpg');"></div>
+                            <h4>1939 Original</h4>
+                            <p>Purple gloves, simple cowl</p>
+                        </div>
+                        <div class="costume-era" data-era="1966">
+                            <div class="era-image" style="background-image: url('images/costume2.jpg');"></div>
+                            <h4>1966 TV Series</h4>
+                            <p>Blue and grey, yellow ellipse</p>
+                        </div>
+                        <div class="costume-era" data-era="1989">
+                            <div class="era-image" style="background-image: url('images/costume3.jpg');"></div>
+                            <h4>1989 Movie</h4>
+                            <p>All black, armored look</p>
+                        </div>
+                        <div class="costume-era" data-era="2005">
+                            <div class="era-image" style="background-image: url('images/costume4.jpg');"></div>
+                            <h4>2005 Begins</h4>
+                            <p>Tactical military armor</p>
+                        </div>
+                    </div>
+                    
+                    <div class="costume-display">
+                        <div class="display-image" style="background-image: url('images/costume1.jpg');"></div>
+                        <div class="display-info">
+                            <h3 id="costume-title">1939 Original Costume</h3>
+                            <p id="costume-description">The original Detective Comics #27 design featuring purple gloves, a simple cowl, and a basic utility belt.</p>
+                            <div class="costume-features">
+                                <span><i class="fas fa-shield-alt"></i> Light Protection</span>
+                                <span><i class="fas fa-running"></i> High Mobility</span>
+                                <span><i class="fas fa-eye"></i> Intimidation Factor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Интерактивный пояс -->
+                <div class="utility-belt">
+                    <h3>Interactive Utility Belt</h3>
+                    <div class="belt-items">
+                        <div class="belt-item" data-tool="batarang">
+                            <div class="item-icon">
+                                <i class="fas fa-boomerang"></i>
+                            </div>
+                            <span>Batarang</span>
+                        </div>
+                        <div class="belt-item" data-tool="grapple">
+                            <div class="item-icon">
+                                <i class="fas fa-anchor"></i>
+                            </div>
+                            <span>Grapple Gun</span>
+                        </div>
+                        <div class="belt-item" data-tool="smoke">
+                            <div class="item-icon">
+                                <i class="fas fa-smog"></i>
+                            </div>
+                            <span>Smoke Pellets</span>
+                        </div>
+                        <div class="belt-item" data-tool="tracker">
+                            <div class="item-icon">
+                                <i class="fas fa-satellite"></i>
+                            </div>
+                            <span>Tracking Device</span>
+                        </div>
+                        <div class="belt-item" data-tool="cutter">
+                            <div class="item-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <span>Laser Cutter</span>
+                        </div>
+                        <div class="belt-item" data-tool="scanner">
+                            <div class="item-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <span>Forensic Scanner</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-info">
+                        <div class="tool-image">
+                            <i class="fas fa-boomerang fa-5x"></i>
+                        </div>
+                        <div class="tool-description">
+                            <h4 id="tool-title">Batarang</h4>
+                            <p id="tool-text">A bat-shaped throwing weapon used for distraction, disarming opponents, or as a grappling hook attachment.</p>
+                            <div class="tool-stats">
+                                <span>Range: 50m</span>
+                                <span>Damage: Low</span>
+                                <span>Utility: High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Галерея транспортных средств -->
+                <div class="vehicle-showcase">
+                    <h3>Bat-Vehicle Gallery</h3>
+                    <div class="vehicles">
+                        <div class="vehicle-card">
+                            <div class="vehicle-img" style="background-image: url('images/batmobile.jpg');"></div>
+                            <div class="vehicle-info">
+                                <h4>Batmobile</h4>
+                                <p>Primary armored pursuit/assault vehicle equipped with weapons, forensic lab, and stealth technology.</p>
+                                <div class="vehicle-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 300+ mph</span>
+                                    <span><i class="fas fa-shield-alt"></i> Titanium Armor</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="vehicle-card">
+                            <div class="vehicle-img" style="background-image: url('images/batwing.jpg');"></div>
+                            <div class="vehicle-info">
+                                <h4>Batwing</h4>
+                                <p>Aerial combat vehicle capable of vertical takeoff, stealth mode, and advanced surveillance.</p>
+                                <div class="vehicle-specs">
+                                    <span><i class="fas fa-fighter-jet"></i> Mach 2</span>
+                                    <span><i class="fas fa-eye-slash"></i> Stealth Capable</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="vehicle-card">
+                            <div class="vehicle-img" style="background-image: url('images/batcycle.jpg');"></div>
+                            <div class="vehicle-info">
+                                <h4>Batcycle</h4>
+                                <p>High-speed motorcycle for urban pursuit and maneuverability in tight spaces.</p>
+                                <div class="vehicle-specs">
+                                    <span><i class="fas fa-motorcycle"></i> 180 mph</span>
+                                    <span><i class="fas fa-compress-arrows-alt"></i> Compact Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/batman-logo.png" alt="Batman Logo">
+                    <span>BATMAN</span>
+                </div>
+                
+                <div class="footer-quote">
+                    <blockquote>
+                        "It's not who I am underneath, but what I do that defines me."
+                        <cite>- Batman, Batman Begins</cite>
+                    </blockquote>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow the Signal</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Batman. All rights reserved. Gotham City needs its Dark Knight.</p>
+                <p class="disclaimer">Batman and all related characters are trademarks of DC Comics.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка наверх -->
+    <a href="#" class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

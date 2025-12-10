@@ -826,12 +826,30 @@ a {
 .costume-timeline::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: rgba(255, 215, 0, 0.3);
+    left: 50%;
+    top: 20px; /* Отступ сверху */
+    bottom: 20px; /* Отступ снизу */
+    width: 4px; /* Толще */
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent-color) 20%,
+        var(--accent-color) 80%,
+        transparent
+    ); /* Градиент с прозрачными концами */
+    transform: translateX(-50%);
     z-index: 1;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(255, 238, 0, 0.3); /* Фиолетовое свечение */
+}
+
+@media (max-width: 768px) {
+    .costume-timeline::before {
+        left: 20px; /* На мобильных смещаем влево */
+        transform: none; /* Убираем transform */
+        top: 10px;
+        bottom: 10px;
+    }
 }
 
 .costume-era {

@@ -617,14 +617,26 @@ a {
 
 .map-container {
     position: relative;
-    height: 400px;
+     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin-top: var(--space-md);
     overflow: hidden;
     border: 2px solid rgba(255, 215, 0, 0.3);
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+        url('img/gotham-map');
+    background-size: cover;
+    background-position: center;
+    display: inline-block; /* Чтобы обернул картинку */
+    position: relative;
 }
 
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ← ПОМЕСТИТ ВСЮ КАРТУ */
+}
 .map-point {
     position: absolute;
     width: 20px;
@@ -1346,4 +1358,42 @@ footer {
 .logo-img-container {
     width: 100px !important;
     height: 100px !important;
+}
+/* Эффект постепенного появления цвета */
+.character-img {
+    filter: grayscale(100%) brightness(0.9);
+    position: relative;
+    overflow: hidden;
+}
+
+.character-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.1), 
+        transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+.character-card:hover .character-img {
+    filter: grayscale(0%) brightness(1.1);
+}
+
+.character-card:hover .character-img::before {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    /* На мобильных всегда показываем цветные картинки */
+    .character-img,
+    .vehicle-img,
+    .era-image {
+        filter: grayscale(0%) !important;
+    }
 }
